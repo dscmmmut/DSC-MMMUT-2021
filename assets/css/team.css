@@ -1,0 +1,128 @@
+.team-introduction {
+    margin-top: 2%;
+    background-color: rgba(83, 109, 254, 0.05);
+}
+#container-team {
+    padding-top: 10%;
+}
+
+.container-team-member {
+    padding-bottom: 50px;
+}
+/*
+.col-sm-12 {
+    padding: 1% 1%;
+}
+*/
+
+.float-my-children {
+    margin: 0px 10px;
+}
+
+.float-my-children>* {
+    float: left;
+    margin-right: 5px;
+}
+
+.float-my-children img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+}
+
+.clearfix {
+    *zoom: 1
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+ul {
+    margin: 0;
+    padding: 7px 0px 0px 0px;
+}
+
+ul li {
+    list-style: none;
+    float: left;
+}
+
+ul li a i {
+    display: block;
+    color: #888;
+    margin: 0px 15px 0px 0px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.team-member-details {
+    margin: 10px auto 16px 20px;
+}
+
+.team-member-details .team-member-name {
+    font-weight: bold;
+}
+
+li #social_button1 {
+    margin: 5px;
+    color: rgb(0,101,202)!important;
+    background-color: rgba(30, 97, 163, 0.1);
+    box-shadow: unset;
+}
+
+.designation {
+    color: rgb(56, 56, 56);
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .display-picture {
+        margin-top: 50px;
+    }
+
+    .details-holder {
+        text-align: center;
+    }
+
+    .social {
+        margin: 0 auto;
+        display: inline-block;
+        text-align: center;
+    }
+
+    #joinbtn {
+        margin-left: -1px;
+    }
+}
+
+#prev-member-heading {
+    background-color: #346DF1;
+    color: white !important;
+    padding: 5px 15px 5px 30px;
+    height: 5vh;
+    width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    transition-property: border-radius, margin;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+}
+
+#prev-team-wrapper {
+    border-top: 2px solid #346DF1;
+}
+
+#container-team-prev {
+    margin-top: 4rem;
+    display: none;
+}

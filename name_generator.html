@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="theme-color" content="#ffffff" />
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="icon" href="favicon.png">
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/material-kit.css?v=2.0.2">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Documentation extras -->
+  <link href="assets/assets-custom/demo.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/flickity@2.0/dist/flickity.min.css">
+  <script src="https://unpkg.com/flickity@2.0/dist/flickity.pkgd.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <title>
+    Projects | DSC HIT
+  </title>
+
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+
+    #top-button {
+      font-size: 20px;
+      transition: 0.3s ease;
+    }
+
+    .grid-item {
+      width: 25%;
+    }
+
+    .grid-item--width2 {
+      width: 50%;
+    }
+
+    */ .img-fluid {
+      border-radius: 5px 5px;
+    }
+
+    .dot {
+      height: 0.8em;
+      width: 0.8em;
+      border-radius: 50%;
+      margin-left: 5px;
+    }
+  </style>
+  <!-- iframe removal -->
+</head>
+
+<body class="landing-page" name="top" id="top">
+
+  <!-- Mavbar -->
+  <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top navbar-expand-lg " color-on-scroll="100"
+    id="sectionsNav">
+    <!-- ===== Navbar through JS ===== -->
+  </nav>
+  <!-- /.Navbar -->
+
+  <div class="main main-raised margin-t-0">
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+    <div class="container">
+      <div class="container-page">
+
+        <p>&nbsp;</p>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <p>&nbsp;</p>
+            <h3 class="title" id="generated_name">Click Generate to duh, Generate!</h3>
+            <p>&nbsp;</p>
+            <button class="btn btn-primary" id="button_generate"><b>Generate New Name</b></button>
+          </div>
+
+          <div class="col-lg-6" style="text-align: center;">
+            <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_oMpCcG.json" background="transparent"
+              speed="1" style="width: 300px; height: 300px;" loop autoplay>
+            </lottie-player>
+          </div>
+
+        </div>
+
+        <p>&nbsp;</p>
+
+      </div>
+    </div>
+
+    <!-- **** Footer **** -->
+    <div id="footer">
+      <!-- ===== Footer Through JS ===== -->
+    </div>
+    <!-- /. Footer -->
+
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/footer.js"></script>
+
+  <!--   Core JS Files   -->
+  <script src="assets/js/core/jquery.min.js"></script>
+  <script src="assets/js/core/popper.min.js"></script>
+  <script src="assets/js/style/bootstrap-material-design.js"></script>
+  <!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+  <script src="assets/js/style/material-kit.js?v=2.0.2"></script>
+  <script src="assets/assets-custom/js/material-kit-demo.js"></script>
+  <!-- <script src="assets/assets-custom/js/GridHorizontal.js"></script> -->
+  <!-- <script src="https://unpkg.com/packery@2/dist/packery.pkgd.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script> -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <script>
+    $('#button_generate').click(function () {
+      $('#generated_name').text(randomEl(adjectives) + '_' + randomEl(nouns));
+      selectElementContents($('#generated_name')[0]);
+    });
+
+    function randomEl(list) {
+      var i = Math.floor(Math.random() * list.length);
+      return list[i];
+    }
+
+    function selectElementContents(el) {
+      var range = document.createRange();
+      range.selectNodeContents(el);
+      var sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    }
+
+    var adjectives = ["adamant", "adroit", "amatory", "animistic", "antic", "arcadian", "baleful", "bellicose", "bilious", "boorish", "calamitous", "caustic", "cerulean", "comely", "concomitant", "contumacious", "corpulent", "crapulous", "defamatory", "didactic", "dilatory", "dowdy", "efficacious", "effulgent", "egregious", "endemic", "equanimous", "execrable", "fastidious", "feckless", "fecund", "friable", "fulsome", "garrulous", "guileless", "gustatory", "heuristic", "histrionic", "hubristic", "incendiary", "insidious", "insolent", "intransigent", "inveterate", "invidious", "irksome", "jejune", "jocular", "judicious", "lachrymose", "limpid", "loquacious", "luminous", "mannered", "mendacious", "meretricious", "minatory", "mordant", "munificent", "nefarious", "noxious", "obtuse", "parsimonious", "pendulous", "pernicious", "pervasive", "petulant", "platitudinous", "precipitate", "propitious", "puckish", "querulous", "quiescent", "rebarbative", "recalcitant", "redolent", "rhadamanthine", "risible", "ruminative", "sagacious", "salubrious", "sartorial", "sclerotic", "serpentine", "spasmodic", "strident", "taciturn", "tenacious", "tremulous", "trenchant", "turbulent", "turgid", "ubiquitous", "uxorious", "verdant", "voluble", "voracious", "wheedling", "withering", "zealous"];
+    var nouns = ["ninja", "chair", "pancake", "statue", "unicorn", "rainbows", "laser", "senor", "bunny", "captain", "nibblets", "cupcake", "carrot", "gnomes", "glitter", "potato", "salad", "toejam", "curtains", "beets", "toilet", "exorcism", "stick_figures", "mermaid_eggs", "sea_barnacles", "dragons", "jellybeans", "snakes", "dolls", "bushes", "cookies", "apples", "ice_cream", "ukulele", "kazoo", "banjo", "opera singer", "circus", "trampoline", "carousel", "carnival", "locomotive", "hot_air_balloon", "praying_mantis", "animator", "artisan", "artist", "colorist", "inker", "coppersmith", "director", "designer", "flatter", "stylist", "leadman", "limner", "make_up_artist", "model", "musician", "penciller", "producer", "scenographer", "set_decorator", "silversmith", "teacher", "auto_mechanic", "beader", "bobbin_boy", "clerk_chapel", "filling_station_attendant", "foreman", "maintenance_engineering", "mechanic", "miller", "moldmaker", "panel_beater", "patternmaker", "plant_operator", "plumber", "sawfiler", "shop_foreman", "soaper", "stationary_engineer", "wheelwright", "woodworkers"];
+
+    $('#button_generate').click();
+  </script>
+</body>
+
+</html>
