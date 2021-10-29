@@ -175,7 +175,39 @@
             <div id="container-team" class="row">
               <!-- ===== Here the Team will Appear ===== -->
               
-                
+              <div class="container-team-member col">
+                <div class="clearfix float-my-children">
+                  <img src="${links[i].displayPicture}">
+  
+                  <div class="team-member-details">
+                    <a href="team/arpit.html">
+                    <span class="team-member-name blue_text" style="font-weight:500;">
+                      <b>${links[i].name}</b>
+                    </span><br></a>
+                    <span style="font-weight:300;">${links[i].description}</span>
+                    <span>
+                      <ul>
+                        <li style="color:rgb(0,101,202);">
+                          <a id="social_link1" href="${links[i].links[0].link}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                       </li>
+                        <li style="color:rgb(0,101,202);">
+                          <a id="social_link1" href="${links[i].links[1].link}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                       </li>
+                       <li style="color:rgb(0,101,202);">
+                          <a id="social_link1" href="${links[i].links[2].link}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                       </li>
+                       
+                       <li style="color:rgb(0,101,202);">
+                          <a id="social_link1" href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                       </li>
+                     
+                        </ul>
+                    </span>
+                  </div>
+  
+                </div>
+             </div>
+            </div>
             
              
           
@@ -211,52 +243,7 @@
     <!--<script src="assets/assets-custom/index.js"></script>-->
 
     <script>
-      fetch('assets/json/team.json')
-    .then(response => response.json())
-    .then(data => {
-        let links = data;
-        console.log("rhkfd");
-        for (let i = 0; i < links.length; i++) {
-            console.log(links.length);
-            let StyleBoxDiv = document.createElement('div');
-            StyleBoxDiv.classList.add("col-4");
-            StyleBoxDiv.classList.add("container-team-member");
-            StyleBoxDiv.innerHTML = `<div>
-                <div class="clearfix float-my-children">
-                  <img src="${links[i].displayPicture}">
-  
-                  <div class="team-member-details">
-                    <span class="team-member-name blue_text" style="font-weight:500;">
-                      <b>${links[i].name}</b>
-                    </span><br>
-                    <span style="font-weight:300;">${links[i].description}</span>
-                    <span>
-                      <ul>
-                        <li style="color:rgb(0,101,202);">
-                          <a id="social_link1" href="${links[i].links[0].link}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-                       </li>
-                        <li style="color:rgb(0,101,202);">
-                          <a id="social_link1" href="${links[i].links[1].link}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                       </li>
-                       <li style="color:rgb(0,101,202);">
-                          <a id="social_link1" href="${links[i].links[2].link}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                       </li>
-                       
-                       <li style="color:rgb(0,101,202);">
-                          <a id="social_link1" href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                       </li>
-                     
-                        </ul>
-                    </span>
-                  </div>
-  
-                </div>
-             </div>
-            </div>
-`;
-            document.getElementById('container-team').appendChild(StyleBoxDiv);
-        };
-});
+   
       $(window).on("load", function () {
         // makes sure the whole site is loaded
         $("#status").fadeOut(); // will first fade out the loading animation
