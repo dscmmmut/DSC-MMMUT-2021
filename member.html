@@ -83,7 +83,44 @@
             <div class="container no-padding container-sub-page">
                 <div id="container-team" class="row">
                     <div id="detail">
-
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                                    <img class="img-fluid mx-auto display-picture" src="assets/img/team/Abhishek.jpg" >
+                                    <h5 class="text-status description">&nbsp;</p>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-12 details-holder">
+                                    <h2 class="text-name">${member.name}</h2>
+                                    <h4 class="description"><b class="designation">${member.description}</b></h4>
+                                    <h4 class="description">2019-2020</h4>
+                                    <ul class="social">
+                                        <ul>
+                                            <li style="color:rgb(0,101,202);">
+                                              <a id="social_link1" href="${links[i].links[0].link}" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                                           </li>
+                                            <li style="color:rgb(0,101,202);">
+                                              <a id="social_link1" href="${links[i].links[1].link}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                           </li>
+                                           <li style="color:rgb(0,101,202);">
+                                              <a id="social_link1" href="${links[i].links[2].link}" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                           </li>
+                                           
+                                           <li style="color:rgb(0,101,202);">
+                                              <a id="social_link1" href="#" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                           </li>
+                                         
+                                            </ul>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                
+                                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                                    <h5 class="description">${member.bio}</h5>
+                                <div>      
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
                     </div>
                 </div>
             </div>
@@ -119,103 +156,6 @@
     <!--<script src="assets/assets-custom/index.js"></script>-->
 
 
-    <script>
-
-        $('document').ready(function () {
-
-            function getLinks(links) {
-
-                var result = '';
-
-                links.forEach(function (link) {
-
-                    if (link.linkType === 'Twitter') {
-                        result += `<li>
-                                    <a class="btn btn-primary btn-fab btn-round" id="social_button1" href="${link.link}" target="_blank"><i style="color: rgb(0,101,202)!important;" class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>`;
-                    }
-
-                    if (link.linkType == 'LinkedIn') {
-                        result += `<li>
-                                    <a class="btn btn-primary btn-fab btn-round" id="social_button1" href="${link.link}" target="_blank"><i style="color: rgb(0,101,202)!important;" class="fa fa-linkedin" aria-hidden="true"></i></a>
-                                </li>`;
-                    }
-
-                    if (link.linkType == 'Github') {
-                        result += `<li>
-                                    <a class="btn btn-primary btn-fab btn-round" id="social_button1" href="${link.link}" target="_blank"><i style="color: rgb(0,101,202)!important;" class="fa fa-link" aria-hidden="true"></i></a>
-                                </li>`;
-                    }
-
-                    if (link.linkType == 'Facebook') {
-                        result += `<li>
-                                    <a class="btn btn-primary btn-fab btn-round" id="social_button1" href="${link.link}" target="_blank"><i style="color: rgb(0,101,202)!important;" class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>`;
-                    }
-
-                    if (link.linkType == 'Dribbble') {
-                        result += `<li>
-                                    <a class="btn btn-primary btn-fab btn-round" id="social_button1" href="${link.link}" target="_blank"><i style="color: rgb(0,101,202)!important;" class="fa fa-dribbble" aria-hidden="true"></i></a>
-                                </li>`;
-                    }
-
-
-                    });
-
-                return result;
-            }
-
-            function getDetails(member) {
-                var template =
-                    `<div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <img class="img-fluid mx-auto display-picture" src="${member.displayPicture} " >
-                        <h5 class="text-status description">&nbsp;</p>
-                    </div>
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-12 details-holder">
-                        <h2 class="text-name">${member.name}</h2>
-                        <h4 class="description"><b class="designation">${member.description}</b></h4>
-                        <h4 class="description">2019-2020</h4>
-                        <ul class="social">
-                        ${getLinks(member.links)}
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                        <h5 class="description">${member.bio}</h5>
-                    <div>      
-                </div>
-            </div>
-            <p>&nbsp;</p>`
-                return template;
-            }
-            var html = '';
-
-            var settings = {
-                "url": "https://dschit.herokuapp.com/team",
-                "method": "GET",
-                "timeout": 0,
-            };
-            $.ajax(settings).done(function (members) {
-
-                var urlParams = new URLSearchParams(window.location.search);
-                console.log(urlParams);
-
-                var myParam = urlParams.get('id')
-                console.log(myParam);
-                for (var i = 0; i < members.length; i++) {
-                    if (members[i].id == myParam)
-                        html += getDetails(members[i]);
-
-                }
-                $('#detail').append(html);
-            });
-        });
-
-    </script>
 </body>
 
 </html>
