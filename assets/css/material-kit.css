@@ -897,6 +897,11 @@ mark,
     height: auto;
     border-radius: 3px;
 }
+.img-fluid-home{
+    max-width: 100%;
+    height: 250px;
+    border-radius: 3px;
+}
 
 .img-thumbnail {
     padding: 0.25rem;
